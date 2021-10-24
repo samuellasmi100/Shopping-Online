@@ -1,0 +1,63 @@
+<div class="order-container">
+    <div class="box1">
+        <p class="cart-heading">Your Products</p>
+        <app-search (searchInputText)="searchText($event)"></app-search>
+        <div class="products">
+            <div *ngFor="let product of products | productsSubText:searchInput">
+                <div class="product">
+                    <img src="{{product.image}}">
+                    <div class="product-info">
+                        <h3 class="product-name" [innerHTML]="product.productName | highlight: searchInput">{{product.productName}}</h3>
+                        <h4 class="product-price">{{product.price}}&#8362;</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="order">
+        <section class="contact" id="contact">
+            <form #orderForm="ngForm">
+                <div class="inputBox">
+                    <p class="heading">Order</p>
+                    <br>
+                    <input type="text"
+                     name="city"
+                     placeholder="Enter Your City"
+                     [(ngModel)]="productsOrder.city"
+                     (dblclick)="getCorrentUserCity()"
+                     #city="ngModel"
+                     required>
+                     <div *ngIf="city.invalid && city.touched" class="error">Missing City</div>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Enter the shipping street address" name="adress"
+                        (dblclick)="getCorrentUserStreet()" [(ngModel)]="productsOrder.street" #adress="ngModel"
+                        required>
+                    <br>
+                    <div *ngIf="adress.invalid && adress.touched" class="error">Missing Street Adress</div>
+                    
+                    <input type="date"
+                     placeholder="Enter Your street address"
+                     name="date"
+                     [(ngModel)]="productsOrder.shippingDate"
+                     (change)="handleDateChange($event)"
+                     required
+                     #date="ngModel">
+                     <div *ngIf="isDateError" class="error">{{isDateError}}</div>
+                    <div *ngIf="date.invalid && date.touched" class="error">Missing Delivery Date</div>
+                    <br>
+                    <input type="number"
+                     name="creditCard"
+                     placeholder="Enter Your Cradit Card"
+                     [(ngModel)]="productsOrder.creditCard" #creditCard="ngModel"
+                     pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+                     required>
+                    <div *ngIf="creditCard.invalid && creditCard.touched" class="error">Missing Credit Card</div>
+                    <div *ngIf="creditCard.errors?.pattern" class="error">Invalid Credit Card</div>
+                    <br>
+                </div>
+                    <button [disabled]="!orderForm.form.valid" (click)="sendOrder()" class="btn">Complete My Order</button>
+            </form>
+
+        </section>
+    </div>

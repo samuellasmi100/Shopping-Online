@@ -1,0 +1,24 @@
+<header>
+    <div class="header-1">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Sopping-Il</a>
+    </div>
+    <div class="header-2">
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <a *ngIf="!this.userService.isLoggdIn()" routerLink="/home" routerLinkActive="active">home</a>
+            <a *ngIf="this.userService.isLoggdIn()" routerLink="/products" routerLinkActive="active">Products</a>
+            <a *ngIf="!this.userService.isLoggdIn()" routerLink="/register" routerLinkActive="active">Register</a>
+            <a *ngIf="!this.userService.isLoggdIn()" routerLink="/login" routerLinkActive="active">Login</a>
+            <a *ngIf="this.userService.isLoggdIn() && this.userService.userType === 1" routerLink="admin/addproduct">Add Product</a>
+            <a *ngIf="this.userService.isLoggdIn()" routerLink="/about">About Us</a>
+            <a *ngIf="this.userService.isLoggdIn()" routerLink="/logout" routerLinkActive="active">LogOut</a>
+        </nav>
+        <button routerLink="cart" *ngIf="this.userService.isLoggdIn()
+         && this.userService.userType === 0">
+            <i class="fas fa-cart-plus"></i>
+            <div class="number-of-products">{{totalItem}}</div>
+        </button>
+    </div>
+</header>
+
+   

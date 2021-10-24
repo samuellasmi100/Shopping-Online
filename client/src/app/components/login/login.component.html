@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="title">Sign In</div>
+  <form class="form" #loginForm="ngForm">
+    <div class="input_field">
+      <input
+       [(ngModel)]="userLoginDetails.email" 
+       name="email"
+        type="text"
+        placeholder="Email"
+        class="input"
+        required
+        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+        #userLoginEmail="ngModel" >
+      <i class="far fa-envelope"></i>
+      <span *ngIf="userLoginEmail.touched && userLoginEmail.invalid" class="error">Email is required</span>
+      <div *ngIf="userLoginEmail.errors?.pattern" class="error">Invalid Email</div>
+
+    </div>
+    <div class="input_field">
+      <input [(ngModel)]="userLoginDetails.password" name="password" type="password" placeholder="Password"
+        class="input" required #userLoginPassword="ngModel">
+      <i class="fas fa-lock"></i>
+      <span *ngIf="userLoginPassword.touched && userLoginPassword.invalid" class="error">password is required</span>
+    </div>
+    <div class="btn">
+      <button [disabled]="!loginForm.form.valid" (click)="login()">Sign In</button>
+    </div>
+  </form>
+</div>

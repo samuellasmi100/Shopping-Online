@@ -1,0 +1,52 @@
+h1.heading {
+    font-size: 29px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 14px;
+    color:var(--green);
+}
+section{
+    padding:2rem 31%;
+  }
+.contact form{
+    text-align: center;
+    padding:2rem;
+    border: 8px solid rgba(0,0,0,.3);
+    border-radius: 16px;
+	  border-color:var(--green);
+  }
+  
+  .contact form .inputBox label {
+    font-size: 22px;
+    color:var(--green)
+  }
+  .contact form .inputBox input, .contact form textarea{
+    padding:1rem;
+    font-size: 1.7rem;
+    background:#f7f7f7;
+    text-transform: none;
+    margin:1rem 0;
+    border:.1rem solid rgba(0,0,0,.3);
+    width: 49%;
+  }
+  
+  .contact form textarea{
+    height: 20rem;
+    resize: none;
+    width: 100%;
+  }
+  .btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background:var(--green);
+    color:#fff;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    background:var(--black);
+  }
+ 

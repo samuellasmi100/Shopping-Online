@@ -1,0 +1,49 @@
+.reception {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+p.heading{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--black);
+}
+.table {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    width: 100%;
+}
+.customers {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 50%;
+ }
+ 
+ .customers td, .customers th {
+   border: 1px solid #ddd;
+   padding: 8px;
+   font-size: 15px;
+ }
+ 
+ .customers tr:nth-child(even){background-color: #f2f2f2;}
+ 
+ .customers tr:hover {background-color: #ddd;}
+ 
+ .customers th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background: var(--green);
+   color: white;
+ }
+ .btn {
+       margin-top: 7rem;
+       background: var(--green);
+       color: #fff;
+       padding: 1.8rem 5rem;
+       font-size: 1.7rem;
+       text-align: center;
+       cursor: pointer;
+ }

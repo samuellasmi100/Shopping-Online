@@ -1,0 +1,7 @@
+<button class="btn" (click)="reset()">
+    <span>All</span>
+</button>
+<button class="btn"  *ngFor="let category of this.categorysService.categorys" (click)="getCategoryId(category.categoryId)">
+    <span>{{category.categoryName}}</span>
+</button>
+

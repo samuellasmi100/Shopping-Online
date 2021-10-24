@@ -1,0 +1,94 @@
+<div class="wrapper" *ngIf="!completeRegister">
+  <div class="title">Sign Up</div>
+  <div class="error" *ngIf="error">{{error}}</div>
+  <form class="form" #registrationFormPt1="ngForm">
+    <div class="input_field">
+      <input class="input" [(ngModel)]="userRegistrationDetails.userId" [ngModelOptions]="{standalone: true}"
+        name="userId" type="number" placeholder="Enter Your Id" required #userRegisterUserId="ngModel">
+      <i class="fas fa-user"></i>
+      <div *ngIf="userRegisterUserId.touched && userRegisterUserId.invalid" class="error">Id is required</div>
+    </div>
+    <div class="input_field">
+      <input
+      [(ngModel)]="userRegistrationDetails.email" 
+      [ngModelOptions]="{standalone: true}" 
+      name="email" 
+      type="email"
+      placeholder="Enter Your Email" 
+      class="input" 
+      required
+      pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+      #userRegisterEmail="ngModel" />
+      <i class="far fa-envelope"></i>
+      <span *ngIf="userRegisterEmail.touched && userRegisterEmail.invalid" class="error">Email is required</span>
+      <div *ngIf="userRegisterEmail.errors?.pattern" class="error">Invalid Email</div>
+
+    </div>
+    <div class="input_field">
+      <input [(ngModel)]="userRegistrationDetails.password" [ngModelOptions]="{standalone: true}" name="password"
+        type="password" placeholder="Password" class="input" required #userRegisterPassword="ngModel">
+      <i class="fas fa-lock"></i>
+      <div *ngIf="userRegisterPassword.touched && userRegisterPassword.invalid" class="error">Password is
+        required</div>
+    </div>
+    <div class="input_field">
+      <input [(ngModel)]="userRegistrationDetails.password1" [ngModelOptions]="{standalone: true}" name="password1"
+        type="password" placeholder="Confirm Password" class="input" require #userRegisterPassword1="ngModel">
+      <i class="fas fa-lock"></i>
+      <div *ngIf="userRegisterPassword1.touched && userRegisterPassword1.invalid" class="error">Confirm Password is
+        required</div>
+    </div>
+    <div class="button">
+      <button [disabled]="!registrationFormPt1.form.valid" (click)="validate($event)">
+        <i class='fas fa-arrow-alt-circle-right' style='font-size:45px;color:black'></i>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<div class="wrapper" *ngIf="completeRegister">
+  <div class="title">Step 2</div>
+  <div class="error" *ngIf="error">{{error}}</div>
+  <form class="form" #registrationForm="ngForm">
+    <div class="input_field">
+      <input [(ngModel)]="userRegistrationDetails.firstName" [ngModelOptions]="{standalone: true}" name="firstName"
+        type="text" placeholder="Enter Your First Name" class="input" require #userRegisterFirstName="ngModel">
+      <i class="fas fa-user"></i>
+      <div *ngIf="userRegisterFirstName.touched && userRegisterFirstName.invalid" class="error">First Name is
+        required</div>
+    </div>
+    <div class="input_field">
+      <input [(ngModel)]="userRegistrationDetails.lastName" [ngModelOptions]="{standalone: true}" name="lastName"
+        type="text" placeholder="Enter Your Last Name" class="input" require #userRegisterLastName="ngModel">
+      <i class="fas fa-user"></i>
+      <div *ngIf="userRegisterLastName.touched && userRegisterLastName.invalid" class="error">Last Name is
+        required</div>
+    </div>
+    <div class="select">
+      <div class="option">
+        <select [(ngModel)]="userRegistrationDetails.city" [ngModelOptions]="{standalone: true}">
+          <option>Select Your City</option>
+          <option>Jerusalem</option>
+          <option>Haifa</option>
+          <option>Tel Aviv</option>
+          <option>Petah Tikva</option>
+          <option>Ramat Gan</option>
+          <option>Eilat</option>
+          <option>Bney Brak</option>
+          <option>Netanya</option>
+          <option>Beer Sheva</option>
+        </select>
+      </div>
+    </div>
+    <div class="input_field">
+      <input [(ngModel)]="userRegistrationDetails.street" [ngModelOptions]="{standalone: true}" name="street"
+        type="text" placeholder="Enter Your Street" class="input" require #userRegisterStreet="ngModel" />
+      <i class="far fa-envelope"></i>
+      <div *ngIf="userRegisterStreet.touched && userRegisterStreet.invalid" class="error">Street is required</div>
+    </div>
+    <div class="btn">
+      <button [disabled]="!registrationForm.form.valid" (click)="register()">Register</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+.search-box-container{
+  display: flex;
+  justify-content: center;
+  height:5rem;
+}
+
+.search-box-container #search-box{
+  height: 100%;
+  width:50%;
+  padding:1rem;
+  font-size: 2rem;
+  color:#333;
+  border:.1rem solid rgba(0,0,0,.3);
+  text-transform: none;
+}
+.search-box-container i{
+  height: 100%;
+  width:8rem;
+  font-size: 2.5rem;
+  line-height: 5rem;
+  color:#fff;
+  background:var(--green);
+  text-align: center;
+  cursor: pointer;
+}
+
+.search-box-container i:hover{
+  background:var(--black);
+}

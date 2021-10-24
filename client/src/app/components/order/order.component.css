@@ -1,0 +1,253 @@
+.order-container {
+  display: flex;
+  justify-content: space-around;
+}
+p.cart-heading{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  color: var(--black);
+}
+section{
+ width: 449px;
+}
+.box1 {
+  margin-top: 65px;
+  border:8px solid rgba(0,0,0,.3);
+  border-radius: 16px;
+  border-color:var(--green);
+  height: 404px;
+  width: 424px;
+  overflow: scroll;
+  position: relative;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+.contact form{
+  text-align: center;
+  padding:2rem;
+  border:8px solid rgba(0,0,0,.3);
+  border-radius:16px;
+  border-color:var(--green);
+  margin-top:66px;
+  height: 404px;
+}
+
+.contact form .inputBox label {
+  font-size: 22px;
+  color:var(--green)
+}
+.contact form .inputBox input, .contact form textarea{
+  padding:1rem;
+  font-size: 1.7rem;
+  background:#f7f7f7;
+  text-transform: none;
+  margin:1rem 0;
+  border:.1rem solid rgba(0,0,0,.3);
+  width: 49%;
+}
+
+.contact form textarea{
+  height: 20rem;
+  resize: none;
+  width: 100%;
+}
+.btn{
+  display: inline-block;
+  margin-top: 3rem;
+  background:var(--green);
+  color:#fff;
+  padding:.8rem 3rem;
+  font-size: 1.7rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background:var(--black);
+}
+.select-container {
+  display: flex;
+  justify-content: center;
+}
+p.heading {
+  font-size: 20px;
+  color:var(--black)
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border:.1rem solid rgba(0,0,0,.3);
+  background:#f7f7f7;
+  background-image: none;
+ } 
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  display: flex;
+  width: 25em;
+  height: 5em;
+  line-height: 3;
+  background:#f7f7f7;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+.select:hover::after {
+  color: #f39c12;
+}
+select .select option {
+  font-size: 1.7rem;
+}
+span {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--black);
+}
+.container{
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.container > h1{
+	padding: 20px 0;
+}
+
+.cart{
+	display: flex;
+}
+
+.products{
+	flex: 1;
+}
+
+.product{
+	display: flex;
+	width: 100%;
+	height: 120px;
+	overflow: hidden;
+	border: 1px solid silver;
+	margin-bottom: 20px;
+	margin-top: 15px;
+}
+
+.product:hover{
+	border: none;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	transform: scale(1.01);
+}
+
+.product > img{
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.product > img:hover{
+	transform: scale(1.04);
+}
+
+.product-info{
+	padding: 20px;
+	width: 100%;
+	position: relative;
+    font-size: 12px;
+}
+
+.product-name, .product-price, .product-offer{
+	margin-bottom: 20px;
+}
+product-quantity > input{
+	width: 40px;
+	padding: 5px;
+	text-align: center;
+}
+
+.fa{
+	margin-right: 5px;
+}
+
+.cart-total{
+	flex: 0.25;
+	margin-left: 20px;
+	padding: 20px;
+	height: 240px;
+	border: 1px solid silver;
+	border-radius: 5px;
+	margin-top: 22px;
+}
+
+.cart-total p{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+
+.cart-total a{
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	background-color: var(--green);
+	color: white;
+	text-decoration: none;
+}
+
+a {
+    font-size: 13px;
+}
+
+.cart-total a:hover{
+	background-color: red;
+}
+input.search {
+  border: .1rem solid rgba(0,0,0,.3);
+  border-radius: 7px;
+  height: 36px;
+  text-align: center;
+}
+.error {
+
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.invalid-date {
+  color: red;
+  background-color: rgb(255, 176, 176);
+}
+
+.valid-date {
+  color: rgb(109, 107, 0);
+  background-color: rgb(255, 254, 176);
+}

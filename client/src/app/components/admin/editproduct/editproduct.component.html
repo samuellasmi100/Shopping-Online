@@ -1,0 +1,43 @@
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>Update Product</span></h1>
+
+    <form>
+
+        <div class="inputBox">
+            <label>Product Name</label>
+            <br><br>
+            <input type="text"
+             placeholder="Product Name" 
+             name="productName"
+             [(ngModel)]="product.productName"
+             required>
+             <br><br>
+        </div>
+
+        <div class="inputBox">
+            <label>Product Price</label>
+            <br><br>
+            <input type="number"
+            placeholder="Product category" 
+            name="price"
+            [(ngModel)]="product.price"
+            required>
+            <br><br>
+            <label>Product Image</label>
+            <br><br>
+            <input type="file" 
+            name="image"
+            accept="image/*"
+            (change)="selectImage($event)"
+            required>
+            <br><br>
+
+        </div>
+
+        <button (click)="update()" class="btn">Update Product</button>
+
+    </form>
+
+</section>
+

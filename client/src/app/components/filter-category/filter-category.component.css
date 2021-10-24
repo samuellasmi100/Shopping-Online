@@ -1,0 +1,15 @@
+.btn {
+    margin-top: 28px;
+    background: var(--green);
+    color: #fff;
+    padding: 0.7rem 6rem;
+    font-size:20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+  
+  button.btn {
+    margin-right: 18px;
+  }
+

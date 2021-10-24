@@ -1,0 +1,59 @@
+<div class="container" *ngIf="products.length > 0">
+	<div class="cart">
+		<div class="products">
+			<div *ngFor="let product of products">
+				<app-cart-item [product]= product></app-cart-item>
+			</div>
+		</div>
+		<div class="cart-total" *ngIf="products.length > 0">
+			<p>
+				<span>Total Price</span>
+				<span>{{grandTotal}}&#8362;</span>
+			</p>
+			<p>
+				<span>Number of Products</span>
+				<span>{{products.length}}</span>
+			</p>
+			<div class="checkout">
+				<a routerLink="/order">Proceed to Checkout</a>
+			</div>
+			<div class="remove-product">
+				<a (click)="clearCart()">Clear Your Cart</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="newUser" *ngIf="this.cartService.newUser && statusCart === 0">
+	<div>Welcome to Sopping-Il!!</div>
+	<p>We Are Glad That You Chose To Make Your Purchase With Us.</p>
+	<button class="new-shopping-button" routerLink="/products">Start Your Shopping Now</button>
+</div>
+
+<div class="Veteran-user-messeag" *ngIf="statusCart === 1 && products.length === 0">
+	<p>Your cart is empty!</p><br><br>
+	<button class="keep-shopping-button" routerLink="/products">Add Products To Your Cart</button>
+</div>
+
+<div class="table" *ngIf="lastOrder.length > 0 && products.length === 0">
+	<span class="header">Your Last Order Information </span>
+        <table class="customers">
+        <thead>
+            <tr>
+              <th>Order Date</th>
+              <th>Shipping Date</th>
+              <th>Total Cart Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{this.ordersService.lastOrder[0].orderDate | date}}</td>
+              <td>{{this.ordersService.lastOrder[0].deliveryDate | date}}</td>
+              <td>{{ this.ordersService.lastOrder[0].finalPrice}}&#8362;</td>
+            </tr>
+        </tbody>
+          </table>
+	<div>
+	<button class="start-shopping-button" routerLink="/products">Start New Shopping</button>
+</div>
+

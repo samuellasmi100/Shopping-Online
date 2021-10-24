@@ -1,0 +1,38 @@
+.container {
+  margin-top: 19px;
+}
+.btn {
+  margin-top: 28px;
+  background: var(--green);
+  color: #fff;
+  padding: 0.7rem 6rem;
+  font-size:20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+button.btn {
+  margin-right: 18px;
+}
+
+
+app-filter-category {
+  display: flex;
+}
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+} 
+
+.category-filter-search-container {
+  height: 72px;
+  margin-left: 49px;
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  margin-top: 29px;
+}

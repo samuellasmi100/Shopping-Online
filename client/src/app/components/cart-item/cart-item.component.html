@@ -1,0 +1,12 @@
+<div class="product">
+    <img src="{{product.image}}">
+    <div class="product-info">
+        <h3 class="product-name">{{product.productName}}</h3>
+        <h4 class="product-price">{{product.price}}&#8362;</h4>
+        <p class="product-quantity">Quantity: {{product.amount}}</p>
+        <p class="product-remove">
+            <i style="font-size: 22px;" (click)="removeItem(product)" class="fa fa-trash"
+                aria-hidden="true"></i>
+        </p>
+    </div>
+</div>

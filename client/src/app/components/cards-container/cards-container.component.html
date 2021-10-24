@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="category-filter-search-container">
+    <div class="category">
+      <app-filter-category (categoryId)="getCategoryId($event)"></app-filter-category>
+    </div>
+    <div class="search">
+      <app-search (searchInputText)="searchText($event)"></app-search>
+    </div>
+  </div>
+
+
+
+  <div class="product-card">
+    <section class="product" id="product"
+      *ngFor="let product of this.productsService.products | productsCategory:categoryId |  productsSubText:searchInput">
+      <app-products [product]="product"></app-products>
+    </section>
+  </div>
+</div>

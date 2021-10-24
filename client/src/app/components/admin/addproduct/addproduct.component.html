@@ -1,0 +1,59 @@
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>Add New Product</span></h1>
+
+    <form #newProductForm="ngForm">
+        <div class="inputBox">
+            <label>Product Name</label>
+            <br>
+            <input type="text"
+             placeholder="Product Name"
+             name="productName"
+             [(ngModel)]="newProduct.productName"
+             #productName="ngModel"
+             required>
+             <div *ngIf="productName.invalid && productName.touched" class="error">Missing Product Name </div>
+            <br>
+            <label>Product Price</label>
+            <br>
+            <input type="text"
+             placeholder="Product Price"
+             name="price" 
+             [(ngModel)]="newProduct.price"   
+             #price="ngModel"
+             required
+             pattern="^[1-9]\d*$">
+             <div *ngIf="price.invalid && price.touched" class="error">Missing Product Price </div>
+             <div *ngIf="price.errors?.pattern" class="error">Invalid price</div>
+            <br>
+            <label>Product Image</label>
+            <br>
+            <input 
+            type="file"
+             placeholder="image"
+             name="image"
+             accept="image/*"
+             (change)="selectImage($event)"
+             required>
+            <br>
+            <label>Choose a Category:</label>
+            <br><br>
+            <div class="select-container">
+                <div class="select">
+                    <select 
+                    name="slct"
+                    id="slct"
+                    (change)="onSelectChange($event)"
+                    required>
+                        <option selected disabled>Choose Category</option>
+                        <option [value]="category.categoryId" *ngFor="let category of categorys">
+                            {{category.categoryName}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button  [disabled]="newProductForm.form.invalid" (click)="addNewProduct()" class="btn">Add Product</button>
+
+    </form>
+
+</section>
